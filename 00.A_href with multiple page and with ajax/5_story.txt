@@ -1,0 +1,8 @@
+till now made  few html page and throught anchor tab , span and button links are being made,but every time i click to buttom
+the page is getting reloaded.This is the problem .
+
+our requirement is that after click only particular portion should appear and not the fully reloaded page.
+
+so here we gonna use concept of ajax (Asynchronous JavaScript And XML.)
+
+This can be used in nodejs and expressjs aswell 
