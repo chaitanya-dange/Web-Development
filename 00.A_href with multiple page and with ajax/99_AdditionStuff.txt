@@ -1,0 +1,64 @@
+____________
+for audio
+_____________
+
+
+$(document).ready(function() {
+  $('#button').click(function() {
+    $.ajax({
+      url: 'example.com/audio/file.mp3',
+      type: 'GET',
+      dataType: 'binary',
+      responseType: 'arraybuffer',
+      success: function(response) {
+        // Create an audio element and set its source to the response data
+        var audio = new Audio();
+        audio.src = window.URL.createObjectURL(new Blob([response], { type: 'audio/mpeg' }));
+        // Play the audio
+        audio.play();
+      }
+    });
+  });
+});
+
+
+
+This code makes an AJAX request for an audio file when the button with an ID of "button" is clicked,
+ and plays the audio when the request is successful
+
+
+
+
+
+___________
+ajax for video
+______________
+
+$(document).ready(function() {
+  $('#button').click(function() {
+    $.ajax({
+      url: 'example.com/video/file.mp4',
+      type: 'GET',
+      dataType: 'binary',
+      responseType: 'arraybuffer',
+      success: function(response) {
+        // Create a video element and set its source to the response data
+        var video = document.createElement('video');
+        video.src = window.URL.createObjectURL(new Blob([response], { type: 'video/mp4' }));
+        // Append the video element to the body
+        document.body.appendChild(video);
+        // Play the video
+        video.play();
+      }
+    });
+  });
+});
+
+
+
+
+This code makes an AJAX GET request to the specified URL when the button with an ID of "button" is clicked,
+ and creates a video element with the response data as its source. 
+The video element is then appended to the body of the document and played.
+
+Note that the dataType and responseType options are used to specify that the response data is binary and should be treated as an array buffer.

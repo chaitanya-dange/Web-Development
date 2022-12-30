@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page</title>
+</head>
+<body>
+    <h1>hiii this is main page..</h1>
+    <button id="jbtn">About Page</button>
+    <button id="button">Html ajax demo</button>
+    <div id="container"></div>
+
+    <button id="button2">for text ajex</button>
+    <div id="container2"></div>
+    
+
+    <div class="container" style="background-color:  black ;color: green;"  ></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+    
+    $(document).ready(()=>{
+            //document is ready
+            $('#jbtn').click(()=>{
+                // button is clicked .
+
+                $.get("7_aboutWithAjax.html",(data)=>{
+                        console.log(data)
+                          // Update the content of the container element with the response data
+                        $('.container').html(data);
+                })
+            })
+        })
+
+
+                // other way of writing the ajax 
+
+                            $(document).ready(function() {
+                    $('#button').click(function() {
+                        $.ajax({
+                        url: '7_aboutWithAjax.html',
+                        type: 'GET',
+                        success: function(response) {
+                            // Update the content of the container element with the response data
+                            $('#container').html(response);
+                        }
+                        });
+                    });
+                    });
+
+
+                    // for text format.....
+
+                    $(document).ready(()=>{
+            //document is ready
+            $('#button2').click(()=>{
+                // button is clicked .
+
+                $.get("5_story.txt",(data)=>{
+                        console.log(data)
+                          // Update the content of the container element with the response data
+                        $('#container2').html(data);
+                })
+            })
+        })
+
+
+        //can also be used for audio , video and other stuff.
+
+
+
+
+    </script>
+</body>
+</html>

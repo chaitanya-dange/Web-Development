@@ -5,4 +5,12 @@ our requirement is that after click only particular portion should appear and no
 
 so here we gonna use concept of ajax (Asynchronous JavaScript And XML.)
 
-This can be used in nodejs and expressjs aswell 
+This can be used in javaScript and jQuery aswell 
+
+ can also be done with javascript by following three four step process
+1. create new XMLHttpRequest()
+2.open XMLHttpRequest
+3.onreadystatechange function
+4.sending request 
+
+here going to do with jQuery to make thing simple this    get jQuery cdn link from net and paste it inside <script> before end of body tag.
